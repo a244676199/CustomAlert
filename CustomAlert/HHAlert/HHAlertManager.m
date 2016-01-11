@@ -10,9 +10,6 @@
 
 @interface HHAlertManager ()
 
-@property (nonatomic, strong) UIWindow *alertWindow;
-@property (nonatomic, weak) UIWindow *originWindow;
-
 @end
 
 @implementation HHAlertManager

@@ -166,7 +166,7 @@
     for (UIButton *btn in self.alertView.subviews) {
         btn.userInteractionEnabled = NO;
     }
-    
+    self.alertView.center = self.view.center;
     self.screenShotView.alpha = 0;
     self.coverView.alpha = 0;
     self.alertView.alpha = 0;

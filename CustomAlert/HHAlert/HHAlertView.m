@@ -10,7 +10,7 @@
 #import "HHAlertManager.h"
 #import "HHAlertViewController.h"
 
-@interface HHAlertView ()
+@interface HHAlertView ()<HHAlertViewControllerDelegate>
 
 @end
 
@@ -48,9 +48,60 @@
 }
 
 - (void)showAlertHandle {
+    UIWindow *keywindow = [UIApplication sharedApplication].keyWindow;
+    if (keywindow != [HHAlertManager sharedManager].alertWindow) {
+        [HHAlertManager sharedManager].originWindow = [UIApplication sharedApplication].keyWindow;
+    }
     
+    HHAlertViewController *vc = [[HHAlertViewController alloc] init];
+    vc.delegate = self;
+    vc.alertView = self;
+    self.vc = vc;
+    
+    [HHAlertManager sharedManager].alertWindow.frame = [UIScreen mainScreen].bounds;
+    [[HHAlertManager sharedManager].alertWindow makeKeyAndVisible];
+    [HHAlertManager sharedManager].alertWindow.rootViewController = self.vc;
+    
+    [self.vc showAlert];
 }
 
+- (void)coverViewTouched {
+    
+    if (self.isDismissWhenTouchBackground) {
+        [self dismissAlertWithCompletion:nil];
+    }
+}
+
+- (void)dismissAlertWithCompletion:(void(^)(void))completion{
+    [self.vc hideAlertWithCompletion:^{
+        [self stackHandle];
+        
+        if (completion) {
+            completion();
+        }
+        
+        NSInteger count = [HHAlertManager sharedManager].alertStack.count;
+        if (count > 0) {
+            HHAlertView *lastAlert = [HHAlertManager sharedManager].alertStack.lastObject;
+            [lastAlert showAlert];
+        }
+    }];
+}
+
+- (void)stackHandle{
+    [[HHAlertManager sharedManager].alertStack removeObject:self];
+    
+    NSInteger count = [HHAlertManager sharedManager].alertStack.count;
+    if (count == 0) {
+        [self toggleKeyWindow];
+    }
+}
+
+- (void)toggleKeyWindow{
+    [[HHAlertManager sharedManager].originWindow makeKeyAndVisible];
+    [HHAlertManager sharedManager].alertWindow.rootViewController = nil;
+    [HHAlertManager sharedManager].alertWindow.frame = CGRectZero;
+}
 
 
 @end

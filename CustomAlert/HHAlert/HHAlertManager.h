@@ -10,6 +10,8 @@
 
 @interface HHAlertManager : NSObject
 
+@property (nonatomic, strong) UIWindow *alertWindow;
+@property (nonatomic, weak) UIWindow *originWindow;
 @property (nonatomic, strong) NSMutableArray *alertStack;
 
 + (instancetype)sharedManager;

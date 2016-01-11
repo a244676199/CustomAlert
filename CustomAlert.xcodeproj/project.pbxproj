@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70036F1E6664D122377462FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7476AFEE120B8E1852C682 /* libPods.a */; };
+		8504248D1C4406ED00E5475A /* HHInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8504248C1C4406ED00E5475A /* HHInputView.m */; };
 		88F1718D1C43B8900083A19E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1718C1C43B8900083A19E /* main.m */; };
 		88F171901C43B8900083A19E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1718F1C43B8900083A19E /* AppDelegate.m */; };
 		88F171931C43B8900083A19E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F171921C43B8900083A19E /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8504248B1C4406ED00E5475A /* HHInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHInputView.h; sourceTree = "<group>"; };
+		8504248C1C4406ED00E5475A /* HHInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHInputView.m; sourceTree = "<group>"; };
 		88627D4462240208A46081D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		88F171881C43B8900083A19E /* CustomAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F1718C1C43B8900083A19E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				88F171991C43B8900083A19E /* LaunchScreen.storyboard */,
 				88F1719C1C43B8900083A19E /* Info.plist */,
 				88F1718B1C43B8900083A19E /* Supporting Files */,
+				8504248B1C4406ED00E5475A /* HHInputView.h */,
+				8504248C1C4406ED00E5475A /* HHInputView.m */,
 			);
 			path = CustomAlert;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			files = (
 				88F171A81C43BD960083A19E /* HHAlertViewController.m in Sources */,
 				88F171931C43B8900083A19E /* ViewController.m in Sources */,
+				8504248D1C4406ED00E5475A /* HHInputView.m in Sources */,
 				88F171901C43B8900083A19E /* AppDelegate.m in Sources */,
 				88F171AB1C43BDC70083A19E /* HHAlertView.m in Sources */,
 				88F171A51C43B9250083A19E /* HHAlertManager.m in Sources */,

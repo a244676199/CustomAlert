@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HHInputView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+    b.frame = CGRectMake(100, 100, 50, 30);
+    b.backgroundColor = [UIColor redColor];
+    [self.view addSubview:b];
+    [b addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)buttonClick:(UIButton *)b {
+    [[HHInputView inputView] show];
 }
 
 - (void)didReceiveMemoryWarning {

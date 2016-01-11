@@ -29,6 +29,7 @@
 @property (nonatomic, weak) id <HHAlertViewControllerDelegate> delegate;
 
 - (void)hideAlertWithCompletion:(void(^)(void))completion;
+- (void)showAlert;
 
 @end
 
